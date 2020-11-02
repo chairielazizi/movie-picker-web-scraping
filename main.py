@@ -21,9 +21,15 @@ def main():
         return year
 
     years = [get_year(tag) for tag in movietags]
+    actors_list = [tag['title'] for tag in inner_movietags]
+    titles [tag.text for tag in inner_movietags]
 
     innermovietag0 = inner_movietags[0]
     print(innermovietag0)
+    actors = innermovietag0['title']
+    title = innermovietag0.text 
+    print(actors)
+    print(title)
     # print(movietag0)
 
     
