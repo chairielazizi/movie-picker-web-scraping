@@ -11,6 +11,7 @@ def main():
     soup = BeautifulSoup(html, 'html.parser')
     movietags = soup.select('td.titleColumn')
     inner_movietags = soup.select('td.titleColumn a')
+    rating_tags = soup.select('td.posterColumn span[name=ir]')
 
 
     movietag0 = movietags[0]
@@ -22,15 +23,18 @@ def main():
 
     years = [get_year(tag) for tag in movietags]
     actors_list = [tag['title'] for tag in inner_movietags]
-    titles [tag.text for tag in inner_movietags]
+    titles = [tag.text for tag in inner_movietags]
+    ratings = [float(tag['data-value']) for tag in rating_tags]
 
-    innermovietag0 = inner_movietags[0]
-    print(innermovietag0)
-    actors = innermovietag0['title']
-    title = innermovietag0.text 
-    print(actors)
-    print(title)
-    # print(movietag0)
+    # innermovietag0 = inner_movietags[0]
+    # print(innermovietag0)
+    # actors = innermovietag0['title']
+    # title = innermovietag0.text 
+    # print(actors)
+    # print(title)
+    # # print(movietag0)
+    # rating0 = rating_tags[0]
+    # print(rating0['data-value'])
 
     
 
